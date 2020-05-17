@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<style>
+    .form-container{
+        max-width: 800px;
+        margin: 20px auto 0 auto;
+        background: white;
+        border-radius: 8px;
+    }
+
+    .result-container{
+        max-width: 800px;
+        margin: 20px auto 0 auto;
+        background: white;
+        border-radius: 8px;
+    }
+
+    p{
+        text-align: justify;
+        padding: 5px 15px;
+    }
+
+    .form{
+        padding: 10px;
+    }
+
+    .result{
+        padding: 10px;
+    }
+
+    textarea{
+        font-family: Consolas;
+        white-space: nowrap;
+    }
+
+    body {
+        background-color: #343a40;
+    }
+
+    .result-div{
+        margin: 10px 0;
+    }
+
+    .alignment-result{
+        font-family: Consolas;
+        white-space: nowrap;
+        overflow: auto;
+    }
+
+    /*$color2-1: #fff;*/
+
+    /*body1 {*/
+    /*background-color:#62bbd3;*/
+    /*background-image:*/
+    /*radial-gradient($color2-1 9px, transparent 10px),*/
+    /*repeating-radial-gradient($color2-1 0, $color2-1 4px, transparent 5px, transparent 20px, $color2-1 21px, $color2-1 25px, transparent 26px, transparent 50px);*/
+    /*background-size: 30px 30px, 90px 90px;*/
+    /*background-position: 0 0;*/
+    /*}*/
+</style>
+
+<div class="result-container">
+    <div class="result">
+        <div class="result-div">
+            <span>Штраф за инициацию пропуска:</span>
+            <span th:text="${existence}"></span>
+        </div>
+        <div class="result-div">
+            <span>Штраф за продолжение пропуска: </span>
+            <span th:text="${extension}"></span>
+        </div>
+
+        <div class="result-div">Результат выравнивания:</div>
+        <div class="alignment-result result-div">
+            <div th:text="${result1}"></div>
+            <div th:text="${result2}"></div>
+        </div>
+
+        <div class="result-div">
+            <span>Длина последовательностей: </span>
+            <span th:text="${length}"></span>
+        </div>
+
+        <div class="result-div">
+            <span>Идентично: </span>
+            <span th:text="${identities}"></span>
+        </div>
+
+        <div class="result-div">
+            <span>Пропусков: </span>
+            <span th:text="${gaps}"></span>
+        </div>
+
+        <a href="/">
+            <button type="submit" class="btn btn-outline-dark mb-2">Назад</button>
+        </a>
+
+    </div>
+</div>
+</body>
+</html>
